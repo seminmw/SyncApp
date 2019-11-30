@@ -1,0 +1,13 @@
+{
+    "name": "mike/scan_files",
+    "authors": [
+        {
+            "name": "Mikhail Semin",
+            "email": "seminmv10@gmail.com"
+        }
+    ],
+    "require": {
+        "fzaninotto/faker": "^1.9",
+        "vlucas/phpdotenv": "^3.6"
+    }
+}
