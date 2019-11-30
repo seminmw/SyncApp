@@ -8,8 +8,8 @@ class SyncImages
 
     /**
      * SyncImages constructor.
-     * @param array $data -> данные по изображениями
-     * @param string $pathToFolder -> путь к дериктории
+     * @param array $data -> данные по файлам
+     * @param string $pathToFolder -> путь к директории
      */
     public function __construct(array $data, string $pathToFolder)
     {
@@ -52,7 +52,7 @@ class SyncImages
     }
 
     /**
-     * Получаем файлы в дериктории
+     * Получаем файлы в директории
      * @return array|false
      */
     private function scanFolder():array
@@ -84,6 +84,9 @@ class SyncImages
         }
     }
 
+    /**
+     * Метод для установки значений в php.ini
+     */
     private function setScriptProperty()
     {
         ini_set('max_execution_time', '0');
