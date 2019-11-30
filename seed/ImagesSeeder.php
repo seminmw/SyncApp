@@ -13,10 +13,11 @@ class ImagesSeeder
         $imagesRepository = new ImagesRepository();
         $faker = Faker\Factory::create();
 
-        for ($i=0; $i < $count; $i++) {
+        for ($i = 0; $i < $count; $i++) {
             $name = $faker->name() . ".jpg";
-
             $imagesRepository->create($name);
+
+            printf("%d) %s created...\n", $i + 1, $name);
         }
     }
 }
