@@ -1,13 +1,17 @@
 <?php
+
 require_once 'init.php';
 
-$images = new ImagesRepository();
+// Позволит распределить программу по cron job
+define('DATE_START', isset($argv[1]) ? $argv[1] : '1900-01-01');
+define('DATE_END', isset($argv[2]) ? $argv[2] : '2050-01-01');
 
-$data = $images->getAll();
+//
+$repo = new ImagesRepository();
 
-$pathToFolder = __DIR__ . "/" . FOLDER_NAME;
-$syncImages = new SyncImages($data, $pathToFolder);
+//
+$sync = new MissingFiles($repo, FOLDER, DATE_START, DATE_END, RECORDS_PAGE);
+$files = $sync->getFiles();
 
-$res = $syncImages->getSyncData();
-
-SyncImages::viewResult($res);
+//
+$sync->printResult($files);

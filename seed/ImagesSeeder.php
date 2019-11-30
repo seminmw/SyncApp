@@ -7,10 +7,9 @@ class ImagesSeeder
 {
 
     /**
-     * @param int $count - Кол-во вставок
+     * @param int $count
      */
-    public function seed(int $count)
-    {
+    public function seed(int $count) {
         $imagesRepository = new ImagesRepository();
         $faker = Faker\Factory::create();
 

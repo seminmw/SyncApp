@@ -10,4 +10,7 @@ define('DB_PASS', getenv('DB_PASS'));
 define('DB_NAME', getenv('DB_NAME'));
 
 # Folder
-define('FOLDER_NAME', getenv('FOLDER_NAME'));
+define("RECORDS_PAGE", 2000);
+
+define("FOLDER", __DIR__ . "/images");
+define("DS", DIRECTORY_SEPARATOR);
