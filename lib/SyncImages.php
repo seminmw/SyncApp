@@ -26,11 +26,15 @@ class SyncImages
         $this->setScriptProperty();
 
         if(empty($this->data)) {
-            echo "Empty data";
+            return ["Empty data"];
         }
 
         // Получаем файлы в папке
         $imagesToFolder = $this->scanFolder();
+
+        if(empty($imagesToFolder)) {
+            return ["Empty data"];
+        }
 
         $nameFiles = array_map(function($item) {
             return $item['name'];
